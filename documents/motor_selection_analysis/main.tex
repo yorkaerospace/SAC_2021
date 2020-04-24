@@ -1,0 +1,173 @@
+\documentclass[11pt,table]{article}
+\usepackage{preamble}
+
+\title{Motor Selection Analysis}
+\date{March 2020}
+
+\begin{document}
+\maketitle
+
+\textbf{Disclaimer}: A lot of this is probably model-rocketry-101, and will not be 100\% accurate. I've never launched a
+model rocket before, so if anything sounds completely off, please let me know.
+
+\section*{Overview}
+The two main factors that we don't have control over are:
+
+\begin{itemize}
+	\item The external environment (the structure of the atmosphere, weather conditions on launch day).
+	\item The internals of the motor we choose to use (construction, behaviour), because of the category we are
+		competing in (COTS).
+\end{itemize}
+
+We have design freedom over the remainder of the launch vehicle (LV). This is not complete because of the constraints
+set out by ESRA, but these are relatively high level. Once we've finalised a motor, the design space for the rest of the
+LV is opened up. It seems possible to derive almost all remaining design questions from the motor and the competition
+goal. Without providing links to all design decisions that will have to be made, the following lists a few examples.
+These allow cascading information to be determined. Further into design, sub-problems can be properly defined.
+
+\begin{itemize}
+	\item Diameter gives us upper and lower bounds on the LV's total length (using stability, caliber, fineness ratio
+		recommendations/constraints for target-apogee flight). This can in turn be used to make general statements about
+		and define constraints for the air frame and then space we have to store avionics hardware, recovery hardware,
+		payload etc...
+
+	\item Mass and thrust data gives us a hard upper bound on the mass of the remainder of the LV if we're to reach
+		10'000ft, which all feeds into the paragraph above.
+
+	\item Price gives us a rough estimate of remaining budget to work with (even if this is subject to change).    
+
+	\item $\cdots$
+\end{itemize}
+
+\section*{Motor Parameters}
+The following section outlines some motor parameters that should be used to inform our choice. Some of these are given
+on data sheets online, others need to be calculated.
+
+\subsection*{Available with data sheets}
+\begin{itemize}
+	\item Type (single-use, reloadable, hybrid)
+	\item Delay time(s)/whether it even has a delay charge or not (booster)
+    \item Average thrust
+    \item Maximum thrust
+    \item Thrust-vs-time curve
+    \item Total impulse and impulse class
+    \item Burn time
+    \item Diameter
+    \item Length
+    \item Total mass
+    \item Propellant mass (and how this changes over the burn)
+    \item Centre of gravity (and how this changes over the burn)
+\end{itemize}
+
+These parameters can easily be obtained from a \href{http://wiki.openrocket.info/RSE_File}{.rse file}.
+
+\subsection*{Determined independently}
+\begin{itemize}
+	\item Allowable - does the SAC allow the use of this motor? Any motors with a total impulse greater than 40'960 Ns
+		cannot be used. This will rule out higher-power motors.
+	\item Sufficiency - in the best case, is it physically possible for this motor to reach 10'000ft with a 4kg payload?
+		This will rule out lower-power motors.
+	\item Overall consistency between units (focusing on but not limited to the thrust curve) - what uncertainty is
+		there around the thrust curve provided in the data sheet? Are there multiple sets of test data for this motor
+		that support each other? What is the source of the test data? Has the manufacturer supplied a measure of
+		standard deviation for any parameters? How many tests have been carried out to determine values for the
+		datasheet?
+	\item Reliability - are there any instances where this motor has been known to CATO?
+	\item Price - is this motor too expensive?
+\end{itemize}
+
+\section*{Selection Criteria}
+Given the complete set of parameters above and the competition goal, in what order should we consider the parameters when
+selecting the optimal motor? This list is ordered based on priority and describes the ideal value of each parameter, so
+the process of selecting a motor becomes an optimisation problem.
+
+\begin{enumerate}
+    \item \underline{Allowable} \\
+	Must be allowed
+    
+    \item \underline{Sufficiency} \\
+	Must be able to reach $\geq$ 10'000ft carrying $\geq$ 4kg of extra mass (at this stage, the required payload is the
+	only mass information we have)
+    
+    \item \underline{Reliability} \\
+    Maximise \\
+	It's not obvious how this could be quantified. It could involve the number of reported failures online in blogs,
+	videos, forums, papers. Is it correct to assume that modern motors are more reliable than older motors? Are certain
+	internal propellant structures more prone to failure than others? When do the most failures occur?
+    
+    \item \underline{Type} \\
+    Reloadable $\geq$ single-use $\geq$ hybrid \\
+	Considering a measure of simplicity, hybrid motors take the lowest rank and having reload capability - provided it
+	doesn't add any significant risks - is better than not having reload capability.
+    
+    \item \underline{Uncertainty} \\
+    Minimise \\
+	Because we don't have the ability to throttle the motor, our final apogee is coupled to the motors performance: once
+	it's been ignited, we have no active control. Therefore I think consistency of motor performance should have the
+	highest priority of all parameters. We'd have room to configure the mass of the LV to raise or lower it's apogee
+	accurately if we had accurate information about the motors performance. But mass optimisation wouldn't matter if
+	there was still a significant chance the motor might leave the LV too high or too low. Adding mass to the vehicle
+	might even amplify uncertainty in the apogee. How a value for 'consistency' is determined for each motor requires
+	discussion. Which parameters should be used in this calculation? I think burn time, average thrust and the
+	\textit{shape} of the thrust curve are priority (in that order). These would also be the most complex/expensive to
+	test ourselves.
+    
+    % ========================================================================================================================
+    
+    \item \underline{Delay time(s)/whether it even has a delay charge or not (booster)} \\
+    No delay charge $>$ delay charge, minimise delay time \\
+	A miscalculation here would still give us a good chance of hitting the target apogee if everything else was correct,
+	hence the low priority. This becomes relevant after motor burnout as the LV approaches its' apogee. As soon as the
+	delay charge fires and the vehicle splits, it becomes impossible to predict its aerodynamic behaviour. If this fired
+	too early it would make it less likely that we could accurately hit the target altitude. Therefore ideally,
+	chute-deploy should be triggered by our own software and a separate charge. We could combine IMU measurements with a
+	moving average of altitude to guarantee that the LV had passed apogee before activating the 'initial recovery event'
+	(explained by docs). If all motors have delay charges built-in, we should choose the smallest value that gives us
+	high confidence it will \textbf{not} activate before apogee. It would be possible to determine an optimum delay time
+	if we had to choose one, by comparing the number of points gained for hitting the target altitude vs performing the
+	initial recovery event successfully (without leaving it too late during descent and
+	\href{https://www.rocketreviews.com/zipper--zippering-180703140820.html}{zippering} the LV), but this shouldn't be
+	necessary.
+    
+	\todo[inline]{complete these}
+    \item \underline{Average thrust} \\
+		\todo[inline]{todo}
+	Low average thrust, over a long burn time as opposed to high average thrust over short burn.
+
+    \item \underline{Maximum thrust}
+    
+    \item \underline{Thrust-vs-time curve}
+		\todo[inline]{look into stability tradeoff}
+	Rule of thumb is at least 30mph clearing the launch mount,
+    
+    \item \underline{Total impulse and impulse class}
+	\todo[inline]{todo}
+    
+    \item \underline{Burn time} \\
+    Maximise \\
+	Long burn time + low average thrust $\rightarrow$ minimised average veloctiy $\rightarrow$ minimised drag.
+    
+    \item \underline{Diameter} \\
+    Minimise
+    
+    \item \underline{Length} \\
+    Minimise
+    
+    \item \underline{Total mass} \\
+    Minimise \\
+	Although overall, the LV should be relatively heavy for momentum and resistance to wind disturbance, we want to have
+	maximum control over the placement of mass (get everything essential done with the minimum mass and then inert mass
+	to bring the total to our target. Also, for stability, the CoG of the LV should be closer to the nose than the fins
+	and motor, so the mass of the motor should be minimised.
+    
+    \item \underline{Propellant mass (and how this changes over the burn)}
+    
+    \item \underline{Centre of gravity (and how this changes over the burn)}
+    
+    % ========================================================================================================================
+    
+    \item \underline{Price} \\
+    Minimise
+\end{enumerate}
+
+\end{document}

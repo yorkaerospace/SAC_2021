@@ -1,0 +1,67 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_OUTPUT_FILESEP	slash	/slash or backslash/
+!_TAG_OUTPUT_MODE	u-ctags	/u-ctags or e-ctags/
+!_TAG_PROGRAM_AUTHOR	Universal Ctags Team	//
+!_TAG_PROGRAM_NAME	Universal Ctags	/Derived from Exuberant Ctags/
+!_TAG_PROGRAM_URL	https://ctags.io/	/official site/
+!_TAG_PROGRAM_VERSION	0.0.0	//
+Available with data sheets	documents/motor_selection_analysis/main.tex	/^\\subsection*{Available with data sheets}$/;"	u	section:Motor Parameters
+Derivative	simulation/src/physics_utils.py	/^class Derivative:$/;"	c
+Determined independently	documents/motor_selection_analysis/main.tex	/^\\subsection*{Determined independently}$/;"	u	section:Motor Parameters
+LaunchVehicle	simulation/src/launch_vehicle.py	/^class LaunchVehicle(Particle):$/;"	c
+MOTOR_DATA_DIR	simulation/src/motor.py	/^    MOTOR_DATA_DIR = os.path.join(pathlib.Path(__file__).parent.absolute(), "..\/res\/motor_file/;"	v	class:Motor
+Motor	simulation/src/motor.py	/^class Motor:$/;"	c
+Motor Parameters	documents/motor_selection_analysis/main.tex	/^\\section*{Motor Parameters}$/;"	s
+Overview	documents/motor_selection_analysis/main.tex	/^\\section*{Overview}$/;"	s
+Particle	simulation/src/physics_utils.py	/^class Particle:$/;"	c
+Plotter	simulation/src/plotter.py	/^class Plotter:$/;"	c
+Points distribution	README.md	/^## Points distribution$/;"	s
+Requirements	simulation/README.md	/^### Requirements$/;"	S
+Run	simulation/README.md	/^### Run$/;"	S
+SA Cup Design and Simulation 🚀	README.md	/^# SA Cup Design and Simulation 🚀$/;"	c
+Selection Criteria	documents/motor_selection_analysis/main.tex	/^\\section*{Selection Criteria}$/;"	s
+Simulation	simulation/README.md	/^## Simulation$/;"	s
+State	simulation/src/physics_utils.py	/^class State:$/;"	c
+__init__	simulation/src/launch_vehicle.py	/^    def __init__(self):$/;"	m	class:LaunchVehicle
+__init__	simulation/src/motor.py	/^    def __init__(self, motor_name):$/;"	m	class:Motor
+__init__	simulation/src/physics_utils.py	/^    def __init__(self):$/;"	m	class:Derivative
+__init__	simulation/src/physics_utils.py	/^    def __init__(self):$/;"	m	class:Particle
+__init__	simulation/src/physics_utils.py	/^    def __init__(self):$/;"	m	class:State
+__init__	simulation/src/plotter.py	/^    def __init__(self):$/;"	m	class:Plotter
+_euler	simulation/src/physics_utils.py	/^    def _euler(self, t, dt):$/;"	m	class:Particle
+_evaluate	simulation/src/physics_utils.py	/^    def _evaluate(self, initialState, t, dt, derivative):$/;"	m	class:Particle
+_extract_data_from	simulation/src/motor.py	/^    def _extract_data_from(self, rse_file_path):$/;"	m	class:Motor
+_has_reached_apogee	simulation/src/launch_vehicle.py	/^    def _has_reached_apogee(self):$/;"	m	class:LaunchVehicle
+_keep_above_ground	simulation/src/launch_vehicle.py	/^    def _keep_above_ground(self):$/;"	m	class:LaunchVehicle
+_update_total_mass	simulation/src/launch_vehicle.py	/^    def _update_total_mass(self, time_s):$/;"	m	class:LaunchVehicle
+accel	simulation/src/physics_utils.py	/^    def accel(self):$/;"	m	class:State
+accel	simulation/src/physics_utils.py	/^    def accel(self, new_accel):$/;"	m	class:State
+add_forces	simulation/src/launch_vehicle.py	/^    def add_forces(self, state, t):$/;"	m	class:LaunchVehicle
+burn_data	simulation/src/motor.py	/^    def burn_data(self):$/;"	m	class:Motor
+diameter	simulation/src/motor.py	/^    def diameter(self):$/;"	m	class:Motor
+display_results	simulation/src/plotter.py	/^    def display_results(self):$/;"	m	class:Plotter
+dm	simulation/src/physics_utils.py	/^    def dm(self):$/;"	m	class:Derivative
+dm	simulation/src/physics_utils.py	/^    def dm(self, new_dm):$/;"	m	class:Derivative
+dry_mass	simulation/src/motor.py	/^    def dry_mass(self):$/;"	m	class:Motor
+dx	simulation/src/physics_utils.py	/^    def dx(self):$/;"	m	class:Derivative
+dx	simulation/src/physics_utils.py	/^    def dx(self, new_dx):$/;"	m	class:Derivative
+integrate	simulation/src/physics_utils.py	/^    def integrate(self, t, dt):$/;"	m	class:Particle
+main	simulation/src/main.py	/^def main():$/;"	f
+mass	simulation/src/physics_utils.py	/^    def mass(self):$/;"	m	class:State
+mass	simulation/src/physics_utils.py	/^    def mass(self, new_mass):$/;"	m	class:State
+momentum	simulation/src/physics_utils.py	/^    def momentum(self):$/;"	m	class:State
+momentum	simulation/src/physics_utils.py	/^    def momentum(self, new_momentum):$/;"	m	class:State
+np	simulation/src/motor.py	/^import numpy as np$/;"	I
+plt	simulation/src/plotter.py	/^import matplotlib.pyplot as plt$/;"	I
+pos	simulation/src/physics_utils.py	/^    def pos(self):$/;"	m	class:State
+pos	simulation/src/physics_utils.py	/^    def pos(self, new_pos):$/;"	m	class:State
+prop_mass_at	simulation/src/motor.py	/^    def prop_mass_at(self, time_s):$/;"	m	class:Motor
+recalc_secondary_props	simulation/src/physics_utils.py	/^    def recalc_secondary_props(self):$/;"	m	class:State
+serialise	simulation/src/plotter.py	/^    def serialise(self, time_s, launch_vehicle):$/;"	m	class:Plotter
+state	simulation/src/physics_utils.py	/^    def state(self):$/;"	m	class:Particle
+thrust_at	simulation/src/motor.py	/^    def thrust_at(self, time_s):$/;"	m	class:Motor
+transforms	simulation/src/plotter.py	/^import matplotlib.transforms as transforms$/;"	I
+update	simulation/src/launch_vehicle.py	/^    def update(self, time_s, dt):$/;"	m	class:LaunchVehicle
+vel	simulation/src/physics_utils.py	/^    def vel(self):$/;"	m	class:State
+vel	simulation/src/physics_utils.py	/^    def vel(self, new_vel):$/;"	m	class:State

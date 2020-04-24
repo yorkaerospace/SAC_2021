@@ -1,0 +1,62 @@
+PDF magazine issue explaining what model rocket motor numbers mean.
+https://www.apogeerockets.com/education/downloads/Newsletter486.pdf
+
+
+UC Davis powerpoint showcasing aerobraking design, details included make it look like an IREC entry.
+http://ucdrocket.weebly.com/uploads/1/3/3/4/13349607/ucd_spaceed_rockets_pdr_presentation.pdf
+
+
+MIT Rocket Team's complete rocket design
+http://web.mit.edu/rocketteam/www/usli/2011-12/MIT%20RT%20CDR%202012.pdf
+
+
+Thread specifically discussing the downsides of using an active aerobraking system, the unavoidable inaccuracy of any simulation, the impossibility of aerodynamic modelling of a tumbling rocket. This thread points quite strongly towards going with the most simple design possible (see last comment).
+https://www.reddit.com/r/rocketry/comments/4ipcyo/reaching_a_target_altitude/
+
+
+University of Ottowa Spaceport America Cup competition webpage, "Our competitive advantage is an automated air braking system which is fully controlled by our onboard flight computer to increase our drag and slow us down as we approach altitude"
+https://uorocketry.github.io/#competition
+
+
+Propulse NTNU design review, 2020
+https://www.youtube.com/watch?v=7m6De-Ov4_o
+
+
+Someone's thesis on developing a flight logging system for a rocket in the SAC
+https://digitalworks.union.edu/cgi/viewcontent.cgi?article=3316&context=theses
+
+
+A specific comment from the thread above outlining challenges of aerobraking and an example of a team winning the target-apogee competition with a completely standard model rocket.
+https://www.reddit.com/r/rocketry/comments/4ipcyo/reaching_a_target_altitude/d30m29i/?context=8&depth=9
+
+
+Some of the basic operating principles of solid model rocket motors.
+http://www.lunar.org/docs/handbook/motors.shtml
+
+
+A large online database of rocket motor data files, and a lot of information on motors in general.
+http://www.thrustcurve.org/browser.shtml
+
+
+Design considerations on how to win highest-altitude competitions. We would want to inherit all drag-minimising, stability-increasing techniques, but add a specific amount of weight for a target-apogee competition.
+https://www.nar.org/contest-flying/competition-guide/altitude-events/altitude/
+
+
+Wikipedia page on model rocket motors, good as a base for research into more specific areas.
+https://en.wikipedia.org/wiki/Model_rocket#Model_rocket_motors
+
+
+Adding drag to a model rocket. This source advises against adding weight for safety reasons, but promotes increasing aerodynamic drag.
+https://www.apogeerockets.com/education/downloads/Newsletter351.pdf
+
+
+Minimum takeoff velocity and risks associated with too-slow takeoff (too slow, and rocket is unstable as lift force is low).
+https://www.apogeerockets.com/education/downloads/Newsletter315.pdf
+
+
+Things to consider in a highest-altitude competition
+https://www.rocketryforum.com/threads/reducing-drag-with-surface-finish.62050/
+
+
+Getting closer to a target altitude, although this is based around an iterative approach and multiple flight tests before competition
+https://www.apogeerockets.com/education/downloads/Newsletter249.pdf
