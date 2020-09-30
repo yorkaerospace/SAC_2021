@@ -60,3 +60,5 @@ https://www.rocketryforum.com/threads/reducing-drag-with-surface-finish.62050/
 
 Getting closer to a target altitude, although this is based around an iterative approach and multiple flight tests before competition
 https://www.apogeerockets.com/education/downloads/Newsletter249.pdf
+
+test modfication to file - REMOVE ME
