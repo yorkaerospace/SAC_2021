@@ -61,4 +61,9 @@ https://www.rocketryforum.com/threads/reducing-drag-with-surface-finish.62050/
 Getting closer to a target altitude, although this is based around an iterative approach and multiple flight tests before competition
 https://www.apogeerockets.com/education/downloads/Newsletter249.pdf
 
-test modfication to file - REMOVE ME
+
+A breakdown of nose cone options depending on flight profiles
+http://www.offwegorocketry.com/userfiles/file/Nose%20Cone%20&%20Fin%20Optimization.pdf
+
+Website listing motors, comparisons and flights peformed with motors
+https://www.rocketreviews.com/index.php

@@ -1,7 +1,8 @@
+import os
+import pathlib
+
 import numpy as np
 import thrustcurve
-import pathlib
-import os
 
 
 class Motor:
@@ -39,14 +40,14 @@ class Motor:
 
 
     def thrust_at(self, time_s):
-        return float(np.interp([time], self._burn_data['time'], self._burn_data['force']))
+        return float(np.interp([time_s], self._burn_data['time'], self._burn_data['force']))
 
 
     def prop_mass_at(self, time_s):
-        mass_g = float(np.interp([time], self._burn_data['time'], self._burn_data['mass']))
-        return mass_g / 1000.0 
-    
-    
+        mass_g = float(np.interp([time_s], self._burn_data['time'], self._burn_data['mass']))
+        return mass_g / 1000.0
+
+
     @property
     def burn_data(self):
         return self._burn_data

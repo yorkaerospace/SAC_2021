@@ -1,7 +1,9 @@
 import math
-from physics_utils import Particle
+
 from ambiance import Atmosphere
+
 from motor import Motor
+from physics_utils import Particle
 
 
 class LaunchVehicle(Particle):
@@ -11,7 +13,7 @@ class LaunchVehicle(Particle):
         super().__init__()
         self._motor = Motor("Cesaroni_L395")
         # Other mass of the LV, excluding payload and motor
-        self._misc_extra_mass = 10.0
+        self._misc_extra_mass = 4.5
         self._payload_mass = 4.0
         self._reached_apogee = False
         self._diameter = self._motor.diameter
@@ -24,7 +26,7 @@ class LaunchVehicle(Particle):
     def update(self, time_s, dt):
         self._reached_apogee = self._has_reached_apogee()
         self._update_total_mass(time_s)
-        
+
         self.integrate(time_s, dt)
 
         self._keep_above_ground()
@@ -53,7 +55,7 @@ class LaunchVehicle(Particle):
         # Basic simulation of payload deployment
         if not self._reached_apogee:
             total_mass += self._payload_mass
-        
+
         self.state.mass = total_mass
 
 
@@ -71,7 +73,7 @@ class LaunchVehicle(Particle):
         # Weight
         weight = -9.80665 * state.mass
         self._forces.append(weight)
-        
+
         # Thrust
         thrust = self._motor.thrust_at(t)
         self._forces.append(thrust)
