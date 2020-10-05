@@ -1,0 +1,32 @@
+@startuml
+digraph factors {
+    "total mass" -> thrust [color=red]
+    "motor choice" -> "wet mass"
+    "wet mass" -> "total mass"
+    "dry mass" -> "total mass"
+    "motor choice" -> thrust
+    thrust -> acceleration [color=green]
+    fins -> "dry mass"
+    fins -> drag [color=orange]
+    drag -> acceleration [color=red]
+    acceleration -> velocity
+    velocity -> "nose cone" [color=orange]
+    "nose cone" -> drag [color=orange]
+    fins -> "control surfaces"
+    "nose cone" = "control surfaces"
+    "motor choice" -> "body diameter"
+    "body diameter" -> drag
+    "body diameter" -> "nose cone"
+    velocity -> apogee
+    "nose cone" -> "dry mass"
+    "lug rails" -> "dry mass"
+    "lug rails" -> drag [color=orange]
+    "body finish" -> "dry mass"
+    "body finish" -> drag [color=orange]
+    velocity -> fins [color=orange]
+    "air pressure" -> drag [color=red]
+    wind -> drag [color=red]
+    gravity -> acceleration [color=red]
+    
+}
+@enduml
