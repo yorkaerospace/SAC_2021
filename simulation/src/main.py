@@ -19,7 +19,7 @@ def main():
 
     # Show results
     print("Complete.")
-    plotter.display_results()
+    plotter.display_results(lv._motor.motor_name+".png")
 
 
 if __name__ == '__main__':

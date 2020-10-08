@@ -11,7 +11,7 @@ class LaunchVehicle(Particle):
 
     def __init__(self):
         super().__init__()
-        self._motor = Motor("Cesaroni_L395")
+        self._motor = Motor("Cesaroni_14272N1975-P")
         # Other mass of the LV, excluding payload and motor
         self._misc_extra_mass = 4.5
         self._payload_mass = 4.0

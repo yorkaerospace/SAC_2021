@@ -16,6 +16,7 @@ class Motor:
         self._dry_mass = 0.0
         self._prop_mass = 0.0
         self._diameter = 0.0
+        self.motor_name = motor_name
 
         motor_data_file_path = os.path.join(Motor.MOTOR_DATA_DIR, motor_name) + ".rse"
         self._extract_data_from(motor_data_file_path)

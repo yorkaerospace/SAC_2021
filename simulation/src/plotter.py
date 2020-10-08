@@ -19,9 +19,9 @@ class Plotter:
         self._velocity_hist.append(launch_vehicle.state.vel)
         self._accel_hist.append(launch_vehicle.state.accel)
         self._mass_hist.append(launch_vehicle.state.mass)
-    
 
-    def display_results(self):
+
+    def display_results(self, save=None):
         markers_on = [12, 17, 18, 19]
 
         fig, ((alt_plot, vel_plot), (accel_plot, mass_plot)) = plt.subplots(2, 2)
@@ -58,4 +58,7 @@ class Plotter:
         mass_plot.grid(True)
 
         fig.tight_layout()
+        if save is not None:
+            print("saving as:", save)
+            plt.savefig(save+str(launch_vehicle.state.mass), orientation='landscape')
         plt.show()
