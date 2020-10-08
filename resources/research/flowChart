@@ -27,6 +27,6 @@ digraph factors {
     "air pressure" -> drag [color=red]
     wind -> drag [color=red]
     gravity -> acceleration [color=red]
-    
+    "air pressure" -> thrust
 }
 @enduml
