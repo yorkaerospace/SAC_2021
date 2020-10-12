@@ -67,3 +67,6 @@ http://www.offwegorocketry.com/userfiles/file/Nose%20Cone%20&%20Fin%20Optimizati
 
 Website listing motors, comparisons and flights peformed with motors
 https://www.rocketreviews.com/index.php
+
+A web page declaring hybrid motors legal and sources to begin research
+http://www.ukrocketman.com/rocketry/amateurmotor.shtml
