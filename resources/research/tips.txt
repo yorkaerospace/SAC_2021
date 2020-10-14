@@ -1,0 +1,6 @@
+"Tips:"
+5:1 thrust:weight ration or greater is recommended
+18.3 m/s (60f/s) or greater for rail departure velocity
+Stability ratio of rail departure:burnout (measured in calibers) 1.5 is recommended minimum
+4kg payload
+3,000m < apogee
