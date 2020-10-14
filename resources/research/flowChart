@@ -28,5 +28,7 @@ digraph factors {
     wind -> drag [color=red]
     gravity -> acceleration [color=red]
     "air pressure" -> thrust
+    "dry mass" -> parachute
+    parachute -> "dry mass"
 }
 @enduml
