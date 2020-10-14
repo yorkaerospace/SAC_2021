@@ -16,6 +16,7 @@ Motor Parameters	documents/motor_selection_analysis/main.tex	/^\\section*{Motor 
 Overview	documents/motor_selection_analysis/main.tex	/^\\section*{Overview}$/;"	s
 Particle	simulation/src/physics_utils.py	/^class Particle:$/;"	c
 Plotter	simulation/src/plotter.py	/^class Plotter:$/;"	c
+Points distribution	README.md	/^## Points distribution$/;"	s
 Requirements	simulation/README.md	/^### Requirements$/;"	S
 Run	simulation/README.md	/^### Run$/;"	S
 SA Cup Design and Simulation 🚀	README.md	/^# SA Cup Design and Simulation 🚀$/;"	c

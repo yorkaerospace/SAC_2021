@@ -1,0 +1,33 @@
+Rules and requirements
+======================
+http://www.soundingrocket.org/uploads/9/0/6/4/9064598/sa_cup_irec_rules___requirements_document_20201006_rev_e.pdf
+
+
+Payload challenge
+=================
+http://www.soundingrocket.org/uploads/9/0/6/4/9064598/sdl_payload_challenge_rules_and_info_2017_09_14__1_.pdf
+
+
+GPS tracking requirements
+=========================
+http://www.soundingrocket.org/uploads/9/0/6/4/9064598/sa_cup_irec-gps_tracking_requirement_and_recommendations__rev_b_final_.pdf
+
+
+Design, test, evaluation guide
+==============================
+http://www.soundingrocket.org/uploads/9/0/6/4/9064598/sa_cup_irec-design_test___evaluation_guide_20191118__rev_c_final_.pdf
+
+
+Range operating procedures
+==========================
+http://www.soundingrocket.org/uploads/9/0/6/4/9064598/sa_cup_irec_range_standard_operating_procedures_20190603__baseline_.pdf
+
+
+Schedule
+========
+http://www.soundingrocket.org/uploads/9/0/6/4/9064598/sa_cup_ims-20200816.pdf
+
+
+Fees
+====
+http://www.soundingrocket.org/uploads/9/0/6/4/9064598/sac_irec_fee_letter.pdf
