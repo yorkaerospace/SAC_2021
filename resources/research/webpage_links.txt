@@ -71,3 +71,7 @@ https://www.rocketreviews.com/index.php
 
 A web page declaring hybrid motors legal and sources to begin research
 http://www.ukrocketman.com/rocketry/amateurmotor.shtml
+
+
+The thesis behind openrocket
+http://openrocket.sourceforge.net/thesis.pdf
