@@ -7,11 +7,15 @@ wall = 0.3
 */
 $fn = 360;
 //bottom cylinder
-module tube(L, out_d, in_d)
+module tube(L, out_d, in_d, out_col="red", in_col="yellow")
 {
-difference() {
-cylinder(L, out_d, out_d);
-translate([0, 0, -1])
-    cylinder(L+2, in_d, in_d);
+    difference() {
+    color(out_col)
+    cylinder(L, r=out_d);
+    translate([0, 0, -1])
+        color(in_col)
+        cylinder(L+2, r=in_d);
+    }
 }
-}
+
+tube(10, 5, 4);

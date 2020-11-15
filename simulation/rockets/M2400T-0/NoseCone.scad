@@ -6,20 +6,30 @@ wall = 0.3
 */
 
 $fn = 360;
-module parabola (K=0.5, R1=14, L)
+module parabola (L, K, R1, R2, out_col="orange", in_col="red")
 {
-    //TODO generate wall thickness
-    para1 = [for (x =[0:30]) [x, R1*((2*(x/L)-K*pow((x/L),2))/(2-K))]];
-    para2 = para1;
+    para1 = [for (x =[0:L-1]) [x, R1*((2*(x/L)-K*pow((x/L),2))/(2-K))]];
+    tmp1 = [[L, R1], [L, 0]];
+    outer = concat(para1, tmp1);
     
-    //para2 = [for (x =[0:30]) [x, R2*((2*(x/L)-K*pow((x/L),2))/(2-K))]];
-    //difference
+    para2 = [for (x =[0:L-1]) [x, R2*((2*(x/L)-K*pow((x/L),2))/(2-K))]];
+    tmp2 = [[L, R2], [L, 0]];
+    inner = concat(para2, tmp2);
     
-    translate([0, 0, 30])
-    rotate([180, 0, 0])
-    rotate_extrude()
-    rotate([0, 0, 90])
-    polygon(para1);
+    translate([0, 0, L])
+    difference() {
+        color(out_col)
+        rotate_extrude()
+        rotate([0, 0, -90])
+        polygon(outer);
+        
+        color(in_col)
+        translate([0, 0, R2-R1])
+        rotate_extrude()
+        rotate([0, 0, -90])
+        polygon(inner);
+        
+    }
 }
 
-parabola(K=0.5, R1=14, L=30);
+parabola(L=30, K=1, R1=14, R2=13.4);

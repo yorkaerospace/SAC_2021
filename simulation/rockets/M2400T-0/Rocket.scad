@@ -3,13 +3,10 @@ use <NoseCone.scad>
 
 $fn = 360;
 
-color("yellow")
-tube(175, 14, 13.4);
+tube(175, 14, 13.4, "yellow", "aqua");
 
-color("orange")
 translate([40, 0, 0])
-tube(75, 14, 13.4);
+tube(75, 14, 13.4, "gold", "blue");
 
-color("green")
 translate([-40, 0, 0])
-parabola(K=0.5, R1=14, L=30);
+parabola(30, 1, 14, 13.4, "khaki", "dodgerblue");
