@@ -18,7 +18,7 @@ parabola(30, 1, external_dia, internal_dia, "khaki", "dodgerblue");
 
 for(i = [0:3])
 {
-    translate([-30, i * 4, 0])
+    translate([-35, i * 5, 0])
     rotate([0, 0, 90])
     color("green")
     fin(15, 12, 11, 9.5, 0.3);
