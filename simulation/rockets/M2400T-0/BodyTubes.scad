@@ -11,10 +11,10 @@ module tube(L, out_d, in_d, out_col="red", in_col="yellow")
 {
     difference() {
     color(out_col)
-    cylinder(L, r=out_d);
+    cylinder(L, r=out_d/2);
     translate([0, 0, -1])
         color(in_col)
-        cylinder(L+2, r=in_d);
+        cylinder(L+2, r=in_d/2);
     }
 }
 

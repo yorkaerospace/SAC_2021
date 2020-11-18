@@ -6,8 +6,10 @@ wall = 0.3
 */
 
 $fn = 360;
-module parabola (L, K, R1, R2, out_col="orange", in_col="red")
+module parabola (L, K, D1, D2, out_col="orange", in_col="red")
 {
+    R1 = D1/2;
+    R2 = D2/2;
     para1 = [for (x =[0:L-1]) [x, R1*((2*(x/L)-K*pow((x/L),2))/(2-K))]];
     tmp1 = [[L, R1], [L, 0]];
     outer = concat(para1, tmp1);
@@ -32,4 +34,4 @@ module parabola (L, K, R1, R2, out_col="orange", in_col="red")
     }
 }
 
-parabola(L=30, K=1, R1=14, R2=13.4);
+parabola(L=30, K=1, D1=14, D2=13.4);

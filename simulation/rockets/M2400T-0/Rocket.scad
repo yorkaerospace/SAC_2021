@@ -1,12 +1,38 @@
 use <BodyTubes.scad>
 use <NoseCone.scad>
+use <Fins.scad>
 
 $fn = 360;
 
-tube(175, 14, 13.4, "yellow", "aqua");
+external_dia = 14;
+internal_dia = 13.4;
+explosion = 15;
 
-translate([40, 0, 0])
-tube(75, 14, 13.4, "gold", "blue");
+tube(175, external_dia, internal_dia, "yellow", "aqua");
 
-translate([-40, 0, 0])
-parabola(30, 1, 14, 13.4, "khaki", "dodgerblue");
+translate([0, 0, 175+explosion])
+tube(75, external_dia, internal_dia, "gold", "blue");
+
+translate([0, 0, 175+75+explosion*2])
+parabola(30, 1, external_dia, internal_dia, "khaki", "dodgerblue");
+
+
+translate([external_dia/2 + explosion/2, 0, 0])
+rotate([0, 0, -90])
+color("green")
+fin(15, 12, 11, 9.5, 0.3);
+
+translate([-external_dia/2 - explosion/2, 0, 0])
+rotate([0, 0, 90])
+color("green")
+fin(15, 12, 11, 9.5, 0.3);
+
+translate([0, -external_dia/2 - explosion/2, 0])
+rotate([0, 0, 180])
+color("green")
+fin(15, 12, 11, 9.5, 0.3);
+
+translate([0, external_dia/2 + explosion/2, 0])
+rotate([0, 0, 0])
+color("green")
+fin(15, 12, 11, 9.5, 0.3);
