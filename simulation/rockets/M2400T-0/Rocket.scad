@@ -10,7 +10,7 @@ in_dia = 13.4;
 explosion = 15;
 
 //bottom tube
-tube(175, out_dia, in_dia, "yellow", "aqua");
+tube(231, out_dia, in_dia, "yellow", "aqua");
 
 //inner tube
 translate([0, 0, -59.7- explosion])
@@ -33,13 +33,8 @@ linear_extrude(0.5)
 circle(13.4/2);
 
 
-//upper tube
-translate([0, 0, 175+explosion])
-tube(75, out_dia, in_dia, "gold", "blue");
-
-
 //nose cone
-translate([0, 0, 175+75+explosion*2])
+translate([0, 0, 231+explosion])
 parabola(30, 1, out_dia, in_dia, "khaki", "dodgerblue");
 
 
