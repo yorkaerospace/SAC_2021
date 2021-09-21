@@ -1,4 +1,0 @@
-numpy==1.18.2
-thrustcurve==0.1.0
-matplotlib==3.2.1
-ambiance==1.0.0
